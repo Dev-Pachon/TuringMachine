@@ -77,9 +77,7 @@ public class turing {
 		bw.close();
 		br.close();
 		long pos = System.currentTimeMillis();
-		bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		bw.write(pos-pre+"");
-		bw.close();
+		System.out.println(pos-pre);
 	}
 	
 	public static void addChar(int a, char ch) {
