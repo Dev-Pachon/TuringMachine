@@ -177,7 +177,6 @@ public class turing {
 					middleTuringChar=null;
 					lastTuringChar=null;
 				}else {
-					
 					lastTuringChar = lastTuringChar.getPrevTuringChar();
 					lastTuringChar.setNextTuringChar(null);
 					if(turingChar.size()%2!=0) {
