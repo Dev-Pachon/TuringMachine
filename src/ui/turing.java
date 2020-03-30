@@ -85,10 +85,9 @@ public class turing {
 	
 	public static void addChar(int a, char ch) {
 		if(firstTuringChar == null) {
-			turingChar temp = new turingChar(ch);
-			firstTuringChar = temp;
-			middleTuringChar = temp;
-			lastTuringChar = temp;
+			firstTuringChar = new turingChar(ch); 
+			middleTuringChar = firstTuringChar;
+			lastTuringChar = firstTuringChar;
 		}else {
 			if(a == 0) {
 				turingChar temp = firstTuringChar;
