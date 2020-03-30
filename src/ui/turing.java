@@ -1,3 +1,4 @@
+package ui;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -14,11 +15,10 @@ public class turing {
 	public static turingChar lastTuringChar;
 	
 	public static void main(String[] args) throws IOException {
-		
-		long pre = System.currentTimeMillis();
 		BufferedReader br = new BufferedReader(new FileReader("data/in_turing.txt"));
 		BufferedWriter bw = new BufferedWriter(new FileWriter("data/turing_MyOutput.txt"));
 		
+		long pre = System.currentTimeMillis();
 		String str = br.readLine();
 		
 		while(!str.isEmpty()) {
@@ -77,8 +77,8 @@ public class turing {
 		}
 		bw.close();
 		br.close();
-		bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		long pos = System.currentTimeMillis();
+		bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		bw.write(pos-pre+"");
 		bw.close();
 	}
@@ -172,10 +172,17 @@ public class turing {
 					turingChar.reduceCont();
 				}
 			}else {
-				lastTuringChar = lastTuringChar.getPrevTuringChar();
-				lastTuringChar.setNextTuringChar(null);
-				if(turingChar.size()%2!=0) {
-					middleTuringChar = middleTuringChar.getPrevTuringChar();
+				if(turingChar.size()==1) {
+					firstTuringChar = null;
+					middleTuringChar=null;
+					lastTuringChar=null;
+				}else {
+					
+					lastTuringChar = lastTuringChar.getPrevTuringChar();
+					lastTuringChar.setNextTuringChar(null);
+					if(turingChar.size()%2!=0) {
+						middleTuringChar = middleTuringChar.getPrevTuringChar();
+					}
 				}
 				turingChar.reduceCont();
 			}
