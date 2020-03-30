@@ -20,7 +20,6 @@ public class turing {
 		
 		long pre = System.currentTimeMillis();
 		String str = br.readLine();
-		
 		while(!str.isEmpty()) {
 			firstTuringChar = null;
 			middleTuringChar = null;
